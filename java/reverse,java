@@ -1,0 +1,19 @@
+import java.util.*;
+
+public class reverse {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		        Scanner scanner = new Scanner(System.in);
+		        System.out.print("Enter a string to reverse: ");
+		        String input = scanner.nextLine();
+		        String reversed = new StringBuilder(input).reverse().toString();
+
+		        System.out.println("Reversed string: " + reversed);
+
+		        scanner.close();
+		    }
+
+
+
+	}
