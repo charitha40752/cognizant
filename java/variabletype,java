@@ -1,0 +1,21 @@
+import java.util.*;
+
+public class variabletype {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		        int myInt = 100;
+		        float myFloat = 25.5f;
+		        double myDouble = 123.456;
+		        char myChar = 'A';
+		        boolean myBoolean = true;
+		        System.out.println("Integer value: " + myInt);
+		        System.out.println("Float value: " + myFloat);
+		        System.out.println("Double value: " + myDouble);
+		        System.out.println("Character value: " + myChar);
+		        System.out.println("Boolean value: " + myBoolean);
+		    }
+
+
+	}
