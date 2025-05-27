@@ -1,0 +1,106 @@
+index.html:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Event Handling Demo</title>
+  <style>
+    .event-card {
+      border: 1px solid #ddd;
+      padding: 10px;
+      margin: 8px 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Community Events</h1>
+
+  <label for="categoryFilter">Filter by Category: </label>
+  <select id="categoryFilter">
+    <option value="All">All</option>
+    <option value="Music">Music</option>
+    <option value="Art">Art</option>
+    <option value="Tech">Tech</option>
+  </select>
+
+  <br /><br />
+  <label for="searchInput">Search by Name: </label>
+  <input type="text" id="searchInput" placeholder="Type event name..." />
+
+  <div id="eventsContainer"></div>
+
+  <script src="main.js"></script>
+</body>
+</html>
+
+
+main.js:
+const events = [
+  { id: 1, name: "Jazz Night", category: "Music", seats: 10 },
+  { id: 2, name: "Painting Workshop", category: "Art", seats: 5 },
+  { id: 3, name: "Tech Talk", category: "Tech", seats: 8 },
+  { id: 4, name: "Classical Concert", category: "Music", seats: 0 },
+];
+
+const eventsContainer = document.getElementById("eventsContainer");
+const categoryFilter = document.getElementById("categoryFilter");
+const searchInput = document.getElementById("searchInput");
+
+// Render events filtered by category and search term
+function renderEvents() {
+  const category = categoryFilter.value;
+  const searchTerm = searchInput.value.toLowerCase();
+
+  eventsContainer.innerHTML = "";
+
+  // Filter events by category and name
+  const filteredEvents = events.filter(event => {
+    const categoryMatch = category === "All" || event.category === category;
+    const nameMatch = event.name.toLowerCase().includes(searchTerm);
+    return categoryMatch && nameMatch;
+  });
+
+  filteredEvents.forEach(event => {
+    const card = document.createElement("div");
+    card.className = "event-card";
+
+    card.innerHTML = `
+      <strong>${event.name}</strong> (${event.category})<br/>
+      Seats: ${event.seats}<br/>
+      <button ${event.seats === 0 ? "disabled" : ""} onclick="register(${event.id})">Register</button>
+    `;
+
+    eventsContainer.appendChild(card);
+  });
+
+  if (filteredEvents.length === 0) {
+    eventsContainer.textContent = "No events found.";
+  }
+}
+
+// Register function called by button onclick
+function register(eventId) {
+  const event = events.find(e => e.id === eventId);
+
+  if (!event || event.seats === 0) {
+    alert("Registration not possible.");
+    return;
+  }
+
+  event.seats--;
+  alert(`Registered for ${event.name}! Seats left: ${event.seats}`);
+  renderEvents();
+}
+
+// Attach event listeners
+categoryFilter.onchange = renderEvents;
+
+searchInput.onkeydown = (e) => {
+  // Small delay to wait for input update
+  setTimeout(renderEvents, 100);
+};
+
+// Initial render
+renderEvents();
+
+
