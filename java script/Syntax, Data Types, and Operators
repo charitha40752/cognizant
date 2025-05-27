@@ -1,0 +1,12 @@
+main.js:
+const eventName = "Tech Community Meetup";
+const eventDate = "2025-06-15";
+let availableSeats = 50;
+console.log(`Event: ${eventName}`);
+console.log(`Date: ${eventDate}`);
+console.log(`Available Seats: ${availableSeats}`);
+availableSeats--;
+console.log(`Seat booked! Seats left: ${availableSeats}`);
+availableSeats++;
+console.log(`Registration canceled. Seats available again: ${availableSeats}`);
+
