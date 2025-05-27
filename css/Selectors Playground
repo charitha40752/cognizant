@@ -1,0 +1,79 @@
+HTML CODE
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selectors Playground</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Main Banner -->
+    <header id="mainHeader">
+        <h1>Welcome to the Event</h1>
+    </header>
+
+    <!-- Event Cards -->
+    <div class="eventCard">
+        <h2>Event 1: JavaScript Workshop</h2>
+        <p>Join us for an exciting workshop on JavaScript basics!</p>
+    </div>
+    
+    <div class="eventCard">
+        <h2>Event 2: CSS for Beginners</h2>
+        <p>Learn how to style your websites using CSS.</p>
+    </div>
+    
+    <div class="eventCard">
+        <h2>Event 3: HTML5 Essentials</h2>
+        <p>Get to know the basics of HTML5 and how to build structured web pages.</p>
+    </div>
+
+    <h3>Upcoming Events</h3>
+    <p>Check out the details of our upcoming events above.</p>
+    
+</body>
+</html>
+
+CSS CODE
+/* Universal selector to reset margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Element selector to style all h2 elements */
+h2 {
+    color: #2C3E50;  /* Dark blue color for the event titles */
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+/* ID selector for the banner (main header) */
+#mainHeader {
+    background-color: #3498DB; /* Light blue background */
+    padding: 20px;
+    color: white;
+    text-align: center;
+}
+
+/* Class selector for event containers (event cards) */
+.eventCard {
+    background-color: #ECF0F1;  /* Light grey background */
+    border: 1px solid #BDC3C7;  /* Border around the event card */
+    margin: 15px;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Grouping selector for h3 and p to style together */
+h3, p {
+    color: #7F8C8D;  /* Grayish color for text */
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+
+
