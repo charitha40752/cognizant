@@ -1,0 +1,44 @@
+main.js:
+// Today's date
+const today = new Date("2025-05-27"); // for consistent demo results
+
+// Event list (array of objects)
+const events = [
+  { name: "Tech Conference", date: "2025-06-01", seats: 20 },
+  { name: "AI Workshop", date: "2025-04-20", seats: 15 },
+  { name: "Web Dev Bootcamp", date: "2025-06-05", seats: 0 },
+  { name: "Design Meetup", date: "2025-06-10", seats: 10 },
+];
+
+// Display only valid events
+console.log("Upcoming Events with Available Seats:");
+events.forEach(event => {
+  const eventDate = new Date(event.date);
+
+  if (eventDate > today && event.seats > 0) {
+    console.log(`- ${event.name} on ${event.date} (Seats: ${event.seats})`);
+  } else {
+    console.log(`(Hidden) ${event.name} — past or full.`);
+  }
+});
+
+// Registration function wrapped in try-catch
+function register(event) {
+  try {
+    if (event.seats <= 0) {
+      throw new Error("No seats available.");
+    }
+
+    event.seats--;
+    console.log(`✅ Registered for ${event.name}. Seats left: ${event.seats}`);
+  } catch (error) {
+    console.error(`❌ Cannot register for ${event.name}: ${error.message}`);
+  }
+}
+
+// Simulate registrations
+console.log("\nRegistration Attempts:");
+register(events[0]); // should succeed
+register(events[2]); // should fail (no seats)
+
+
