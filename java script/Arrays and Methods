@@ -1,0 +1,17 @@
+let events = [];
+events.push(
+  { name: "Guitar Jam", category: "Music", date: "2025-07-01" },
+  { name: "Painting Class", category: "Art", date: "2025-07-05" },
+  { name: "Baking Workshop", category: "Cooking", date: "2025-07-10" },
+  { name: "Jazz Night", category: "Music", date: "2025-07-12" }
+);
+const musicEvents = events.filter(event => event.category === "Music");
+console.log("🎵 Music Events:");
+musicEvents.forEach(event => console.log(`- ${event.name} on ${event.date}`));
+const formattedCards = events.map(event => {
+  return `📌 ${event.category} Event: ${event.name} on ${event.date}`;
+});
+
+console.log("\n🪪 Formatted Display Cards:");
+formattedCards.forEach(card => console.log(card));
+
