@@ -1,0 +1,90 @@
+HTML CODE:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Bulletin</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>Community Bulletin</h1>
+    </header>
+
+    <section class="news-article">
+        <h2>Upcoming Community Events</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit amet vestibulum magna. Etiam auctor felis id lectus vehicula, id scelerisque nulla ultricies. Nam ut enim sed risus aliquet eleifend. Suspendisse sollicitudin, sapien vitae scelerisque pharetra, sapien ante tincidunt odio, eget elementum sapien purus a felis. Vivamus non magna mauris. Etiam viverra tortor ut libero gravida, in rutrum sem consequat. Nam feugiat odio ut ligula mollis suscipit. Aliquam erat volutpat.</p>
+
+        <p>Phasellus tristique bibendum magna, in cursus orci rhoncus vitae. Nulla facilisi. Quisque fringilla eros nec metus tincidunt pretium. Ut ut condimentum lorem. Nam vulputate mi a erat tristique, nec interdum nunc viverra. Integer venenatis neque sit amet leo ullamcorper, et volutpat neque vestibulum. Curabitur eget placerat felis, vitae aliquet augue. Aliquam erat volutpat. Integer aliquet urna in purus dignissim, at volutpat dui feugiat. Nulla facilisi.</p>
+
+        <p>Quisque id risus eu felis hendrerit sollicitudin ac at tortor. Cras sit amet turpis et nulla tempor sollicitudin. Sed posuere sollicitudin velit, sit amet lacinia metus hendrerit a. Pellentesque vel lorem nisi. Morbi elementum odio sit amet libero venenatis, et vulputate augue iaculis. Fusce vestibulum felis non purus tincidunt, non congue leo tempor. Sed vel sem vitae lacus vestibulum sollicitudin ac et velit.</p>
+
+        <p>Integer vehicula, libero ac iaculis elementum, turpis magna fermentum mi, eget euismod magna erat vitae nunc. Phasellus nec felis fringilla, bibendum erat a, condimentum ligula. Fusce luctus auctor malesuada. Etiam bibendum elit vel elit gravida, ac aliquam nisl auctor. Morbi viverra orci et massa dignissim, non dictum arcu rutrum. Nulla eget odio non libero ullamcorper accumsan sit amet ut lectus.</p>
+    </section>
+
+</body>
+</html>
+
+
+CSS CODE:
+/* ------------------------------------------
+   General Styles
+------------------------------------------ */
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* ------------------------------------------
+   Header Styles
+------------------------------------------ */
+
+header {
+    text-align: center;
+    background-color: #007BFF;
+    color: white;
+    padding: 20px 0;
+}
+
+header h1 {
+    margin: 0;
+}
+
+/* ------------------------------------------
+   News Article Styles (Multi-column Layout)
+------------------------------------------ */
+
+.news-article {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 800px;  /* Limit the width for readability */
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    column-count: 2;  /* Create two columns */
+    column-gap: 30px;  /* Add space between the columns */
+    column-rule: 1px solid gray;  /* Add a dividing line between columns */
+}
+
+.news-article p {
+    text-align: justify;  /* Justify text for better readability */
+    margin-bottom: 15px;  /* Add spacing between paragraphs */
+}
+
+/* ------------------------------------------
+   Responsive Design: One Column for Small Screens
+------------------------------------------ */
+
+@media (max-width: 768px) {
+    .news-article {
+        column-count: 1;  /* Switch to a single column on smaller screens */
+    }
+}
+
+
+
