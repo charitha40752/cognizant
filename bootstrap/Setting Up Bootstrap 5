@@ -1,0 +1,91 @@
+Example 1.1
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap 5 with CDN</title>
+
+    <!-- Bootstrap 5 CSS from CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- Example content -->
+    <div class="container mt-5">
+        <h1 class="text-center">Hello, Bootstrap 5!</h1>
+        <p class="text-center">This is a basic page styled with Bootstrap 5.</p>
+        <button class="btn btn-primary">Click Me</button>
+    </div>
+
+    <!-- Bootstrap 5 JavaScript from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
+
+
+Example 1.2
+mkdir bootstrap-project
+cd bootstrap-project
+npm init -y
+npm install bootstrap
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap 5 with npm</title>
+
+    <!-- Link Bootstrap CSS from node_modules -->
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Example content -->
+    <div class="container mt-5">
+        <h1 class="text-center">Hello, Bootstrap 5!</h1>
+        <p class="text-center">This is a page styled with Bootstrap 5 from npm.</p>
+        <button class="btn btn-primary">Click Me</button>
+    </div>
+
+    <!-- Link Bootstrap JS from node_modules -->
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
+
+
+index.html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap 5 with Local Files</title>
+
+    <!-- Link Bootstrap CSS from local file -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Example content -->
+    <div class="container mt-5">
+        <h1 class="text-center">Hello, Bootstrap 5!</h1>
+        <p class="text-center">This is a page styled with Bootstrap 5 from local files.</p>
+        <button class="btn btn-primary">Click Me</button>
+    </div>
+
+    <!-- Link Bootstrap JS from local file -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
+
+
+
+
