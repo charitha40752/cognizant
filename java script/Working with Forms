@@ -1,0 +1,118 @@
+index.html:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Event Registration Form</title>
+  <style>
+    .error {
+      color: red;
+      font-size: 0.9em;
+    }
+    .success {
+      color: green;
+      margin-top: 10px;
+    }
+    label {
+      display: block;
+      margin-top: 8px;
+    }
+    input, select {
+      margin-top: 4px;
+      padding: 6px;
+      width: 250px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Register for an Event</h1>
+  
+  <form id="registrationForm" novalidate>
+    <label>
+      Name:
+      <input type="text" name="name" />
+      <span class="error" id="nameError"></span>
+    </label>
+    
+    <label>
+      Email:
+      <input type="email" name="email" />
+      <span class="error" id="emailError"></span>
+    </label>
+    
+    <label>
+      Select Event:
+      <select name="event">
+        <option value="">-- Select an Event --</option>
+        <option value="music">Music Fest</option>
+        <option value="art">Art Expo</option>
+        <option value="tech">Tech Conference</option>
+      </select>
+      <span class="error" id="eventError"></span>
+    </label>
+    
+    <button type="submit">Register</button>
+  </form>
+
+  <div id="resultMessage" class="success"></div>
+
+  <script src="main.js"></script>
+</body>
+</html>
+
+
+main.js:
+
+
+const form = document.getElementById("registrationForm");
+
+form.addEventListener("submit", function(event) {
+  event.preventDefault(); // Prevent form from submitting/reloading
+  
+  // Clear previous errors and result message
+  document.getElementById("nameError").textContent = "";
+  document.getElementById("emailError").textContent = "";
+  document.getElementById("eventError").textContent = "";
+  document.getElementById("resultMessage").textContent = "";
+
+  const name = form.elements["name"].value.trim();
+  const email = form.elements["email"].value.trim();
+  const selectedEvent = form.elements["event"].value;
+
+  let valid = true;
+
+  // Simple validation
+  if (!name) {
+    document.getElementById("nameError").textContent = "Name is required.";
+    valid = false;
+  }
+
+  if (!email) {
+    document.getElementById("emailError").textContent = "Email is required.";
+    valid = false;
+  } else if (!validateEmail(email)) {
+    document.getElementById("emailError").textContent = "Invalid email format.";
+    valid = false;
+  }
+
+  if (!selectedEvent) {
+    document.getElementById("eventError").textContent = "Please select an event.";
+    valid = false;
+  }
+
+  if (valid) {
+    // Simulate successful registration
+    document.getElementById("resultMessage").textContent = `Thank you, ${name}, for registering for the ${selectedEvent} event!`;
+    form.reset();
+  }
+});
+
+// Email validation helper function
+function validateEmail(email) {
+  // Simple regex for email validation
+  const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return re.test(email);
+}
+
+
+
