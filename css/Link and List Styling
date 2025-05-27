@@ -1,0 +1,147 @@
+HTML CODE:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City Council Portal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>City Council Portal</h1>
+    </header>
+
+    <!-- Navigation Menu -->
+    <nav>
+        <ul class="nav-menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <section>
+        <h2>Welcome to the City Council Portal</h2>
+        <p>Discover the services and initiatives provided by the local government.</p>
+    </section>
+
+    <footer>
+        <ul class="footer-links">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+        </ul>
+        <p>&copy; 2025 City Council. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
+
+
+CSS CODE:
+/* ------------------------------------------
+   Global Styles
+------------------------------------------ */
+
+/* Styling for general body text */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* ------------------------------------------
+   Link Styling with Pseudo-classes
+------------------------------------------ */
+
+a {
+    text-decoration: none;  /* Remove the default underline from links */
+    color: #007BFF;  /* Set the default color of the links */
+    font-weight: 600;  /* Make links bold */
+    transition: color 0.3s ease;  /* Smooth transition for color change */
+}
+
+/* Link states */
+a:link {
+    color: #007BFF;  /* Default link color (blue) */
+}
+
+a:visited {
+    color: #6c757d;  /* Dark gray for visited links */
+}
+
+a:hover {
+    color: #0056b3;  /* Darker blue when hovered */
+}
+
+a:active {
+    color: #003366;  /* Dark blue when the link is actively being clicked */
+}
+
+/* ------------------------------------------
+   Navigation Menu Styling
+------------------------------------------ */
+
+/* Style the navigation menu */
+nav ul.nav-menu {
+    list-style-type: none;  /* Remove bullets */
+    padding: 0;  /* Remove default padding */
+    margin: 0;
+    text-align: center;  /* Center-align the menu items */
+}
+
+nav ul.nav-menu li {
+    display: inline-block;  /* Display list items horizontally */
+    margin-right: 20px;  /* Space between the menu items */
+}
+
+nav ul.nav-menu li:last-child {
+    margin-right: 0;  /* Remove right margin on the last item */
+}
+
+nav ul.nav-menu li a {
+    font-size: 1.1em;  /* Slightly larger text for links */
+    padding: 10px 15px;  /* Add some padding around the link text */
+    border-radius: 5px;  /* Rounded corners for the link buttons */
+    transition: background-color 0.3s ease;  /* Smooth background color transition */
+}
+
+nav ul.nav-menu li a:hover {
+    background-color: #0056b3;  /* Change background color on hover */
+    color: white;  /* White text when hovered */
+}
+
+/* ------------------------------------------
+   Footer Link Styling
+------------------------------------------ */
+
+footer ul.footer-links {
+    list-style-type: none;  /* Remove bullets */
+    padding: 0;
+    text-align: center;  /* Center-align footer links */
+}
+
+footer ul.footer-links li {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+footer ul.footer-links li:last-child {
+    margin-right: 0;
+}
+
+footer ul.footer-links li a {
+    color: #6c757d;  /* Dark gray links for the footer */
+    font-size: 0.9em;  /* Slightly smaller text */
+    text-decoration: underline;  /* Underline footer links */
+}
+
+footer ul.footer-links li a:hover {
+    color: #007BFF;  /* Change color to blue when hovered */
+    text-decoration: none;  /* Remove underline on hover */
+}
