@@ -1,0 +1,112 @@
+
+HTML:
+<section id="registration">
+  <h2>Event Registration</h2>
+
+  <form id="eventForm">
+    <label for="name">Name: *</label><br />
+    <input
+      type="text"
+      id="name"
+      name="name"
+      placeholder="Your full name"
+      required
+      autofocus
+    /><br /><br />
+
+    <label for="email">Email: *</label><br />
+    <input
+      type="email"
+      id="email"
+      name="email"
+      placeholder="example@domain.com"
+      required
+    /><br /><br />
+
+    <label for="date">Event Date: *</label><br />
+    <input type="date" id="date" name="date" required /><br /><br />
+
+    <label for="eventType">Event Type: *</label><br />
+    <select id="eventType" name="eventType" required>
+      <option value="" disabled selected>Select an event</option>
+      <option value="music">Music Festival</option>
+      <option value="cleanup">Neighborhood Cleanup</option>
+      <option value="parade">Holiday Parade</option>
+      <option value="art">Art in the Park</option>
+    </select>
+    <br /><br />
+
+    <label for="message">Additional Message:</label><br />
+    <textarea
+      id="message"
+      name="message"
+      rows="4"
+      placeholder="Any special requests or questions?"
+    ></textarea>
+    <br /><br />
+
+    <button type="submit">Register</button>
+  </form>
+
+  <br />
+  <output id="confirmation" style="font-weight: bold; color: green;"></output>
+
+</section>
+
+CSS:
+form {
+  max-width: 400px;
+  margin: 0 auto;
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-family: Arial, sans-serif;
+}
+
+label {
+  font-weight: bold;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+
+JAVA SCRIPT:
+<script>
+  document.getElementById('eventForm').addEventListener('submit', function (e) {
+    e.preventDefault(); // Prevent actual form submission
+    const name = e.target.name.value.trim();
+    const email = e.target.email.value.trim();
+    const date = e.target.date.value;
+    const eventType = e.target.eventType.options[e.target.eventType.selectedIndex].text;
+    const confirmationMsg = `Thank you, ${name}! You have registered for the ${eventType} on ${date}. A confirmation email will be sent to ${email}.`;
+    document.getElementById('confirmation').textContent = confirmationMsg;
+    e.target.reset();
+  });
+</script>
+
+
+
