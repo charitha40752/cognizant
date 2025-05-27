@@ -1,0 +1,119 @@
+HTML CODE:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events Admin - Table Styling</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>Event Management</h1>
+    </header>
+
+    <section>
+        <h2>Upcoming Events</h2>
+        <table class="events-table">
+            <thead>
+                <tr>
+                    <th>Event ID</th>
+                    <th>Event Name</th>
+                    <th>Date</th>
+                    <th>Location</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>101</td>
+                    <td>Annual Charity Gala</td>
+                    <td>2025-11-10</td>
+                    <td>City Hall</td>
+                </tr>
+                <tr>
+                    <td>102</td>
+                    <td>Tech Conference</td>
+                    <td>2025-12-01</td>
+                    <td>Convention Center</td>
+                </tr>
+                <tr>
+                    <td>103</td>
+                    <td>Community Picnic</td>
+                    <td>2025-07-15</td>
+                    <td>Central Park</td>
+                </tr>
+                <tr>
+                    <td>104</td>
+                    <td>Music Festival</td>
+                    <td>2025-09-20</td>
+                    <td>Riverfront Park</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+</body>
+</html>
+
+
+CSS CODE
+/* ------------------------------------------
+   Global Styles
+------------------------------------------ */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* ------------------------------------------
+   Table Styles
+------------------------------------------ */
+
+.events-table {
+    width: 100%;
+    border-collapse: collapse;  /* Remove space between borders */
+    margin: 20px 0;  /* Add margin for spacing */
+    background-color: #fff;  /* White background for the table */
+}
+
+/* Table Header Styling */
+.events-table th {
+    background-color: #2c3e50;  /* Dark background for headers */
+    color: white;  /* White text color */
+    padding: 12px 15px;  /* Padding for header cells */
+    text-align: center;  /* Center-align the text in headers */
+    border: 1px solid #ddd;  /* Light gray border around header */
+}
+
+/* Table Data Styling */
+.events-table td {
+    padding: 10px 15px;  /* Padding for table cells */
+    text-align: center;  /* Center-align the text in table data */
+    border: 1px solid #ddd;  /* Light gray border around cells */
+}
+
+/* Zebra Striping - Alternate Row Colors */
+.events-table tr:nth-child(even) {
+    background-color: #f9f9f9;  /* Light gray background for even rows */
+}
+
+/* Hover Effect for Rows */
+.events-table tr:hover {
+    background-color: #f1f1f1;  /* Slightly darker background when hovered */
+}
+
+/* ------------------------------------------
+   Responsive Table Styles (Optional)
+------------------------------------------ */
+
+@media (max-width: 768px) {
+    .events-table th, .events-table td {
+        padding: 8px 10px;  /* Reduce padding on smaller screens */
+    }
+}
+
