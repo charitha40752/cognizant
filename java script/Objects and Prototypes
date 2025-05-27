@@ -1,0 +1,20 @@
+
+function Event(name, date, category, seats) {
+  this.name = name;
+  this.date = date;
+  this.category = category;
+  this.seats = seats;
+}
+
+Event.prototype.checkAvailability = function () {
+  return this.seats > 0 ? "Seats available" : "Sold out";
+};
+const event1 = new Event("Frontend Workshop", "2025-07-20", "Web", 30);
+console.log(event1.checkAvailability()); // Seats available
+console.log("Event Details:");
+for (const [key, value] of Object.entries(event1)) {
+  console.log(`${key}: ${value}`);
+}
+
+
+
