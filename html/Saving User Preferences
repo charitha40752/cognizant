@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Save Event Preferences</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    select, button {
+      margin-top: 10px;
+      display: block;
+    }
+  </style>
+  <script>
+    function savePreference() {
+      const eventType = document.getElementById("eventType").value;
+      localStorage.setItem("preferredEvent", eventType);
+      sessionStorage.setItem("lastVisit", new Date().toISOString());
+    }
+    window.onload = function() {
+      const saved = localStorage.getItem("preferredEvent");
+      if (saved) {
+        document.getElementById("eventType").value = saved;
+      }
+    };
+    function clearPreferences() {
+      localStorage.clear();
+      sessionStorage.clear();
+      alert("Preferences cleared!");
+      document.getElementById("eventType").selectedIndex = 0;
+    }
+  </script>
+</head>
+<body>
+  <h1>Select Your Preferred Event Type</h1>
+
+  <label for="eventType">Event Type:</label>
+  <select id="eventType" onchange="savePreference()">
+    <option value="">--Select an option--</option>
+    <option value="Workshop">Workshop</option>
+    <option value="Webinar">Webinar</option>
+    <option value="Conference">Conference</option>
+    <option value="Meetup">Meetup</option>
+  </select>
+
+  <button onclick="clearPreferences()">Clear Preferences</button>
+</body>
+</html>
+
+
+
