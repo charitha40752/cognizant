@@ -1,0 +1,123 @@
+HTML:
+<section id="feedback">
+  <h2>Event Feedback</h2>
+
+  <form id="feedbackForm" onsubmit="return false;">
+    <label for="phone">Phone Number (10 digits): *</label><br />
+    <input
+      type="text"
+      id="phone"
+      name="phone"
+      placeholder="e.g. 1234567890"
+      maxlength="10"
+      required
+      onblur="validatePhone()"
+    />
+    <span id="phoneError" style="color: red; margin-left: 10px;"></span>
+    <br /><br />
+
+    <label for="eventSelect">Select Event:</label><br />
+    <select id="eventSelect" onchange="showFee()">
+      <option value="" disabled selected>Select an event</option>
+      <option value="50">Music Festival - $50</option>
+      <option value="30">Neighborhood Cleanup - $30</option>
+      <option value="40">Holiday Parade - $40</option>
+      <option value="25">Art in the Park - $25</option>
+    </select>
+    <p id="feeDisplay" style="font-weight: bold;"></p>
+    <br />
+
+    <label for="feedbackText">Your Feedback:</label><br />
+    <textarea
+      id="feedbackText"
+      name="feedbackText"
+      rows="5"
+      placeholder="Write your feedback here..."
+      onkeydown="countChars()"
+      onkeyup="countChars()"
+      maxlength="500"
+    ></textarea>
+    <p>Characters used: <span id="charCount">0</span>/500</p>
+    <br />
+
+    <button id="submitBtn" onclick="submitFeedback()">Submit Feedback</button>
+  </form>
+
+  <br />
+
+  <img
+    id="eventImg"
+    src="event-thumbnail.jpg"
+    alt="Event Thumbnail"
+    title="Double-click to enlarge"
+    style="width: 200px; cursor: pointer; border: 2px solid #ccc; border-radius: 6px;"
+    ondblclick="enlargeImage()"
+  />
+
+  <p id="confirmationMsg" style="color: green; font-weight: bold; margin-top: 15px;"></p>
+</section>
+
+JAVASCRIPT:
+before closingbody:
+<script>
+  // Validate phone number on blur
+  function validatePhone() {
+    const phoneInput = document.getElementById('phone');
+    const phoneError = document.getElementById('phoneError');
+    const phone = phoneInput.value.trim();
+
+    const phoneRegex = /^\d{10}$/; // exactly 10 digits
+
+    if (!phoneRegex.test(phone)) {
+      phoneError.textContent = 'Please enter a valid 10-digit phone number.';
+      phoneInput.focus();
+      return false;
+    } else {
+      phoneError.textContent = '';
+      return true;
+    }
+  }
+
+  // Show fee on dropdown change
+  function showFee() {
+    const select = document.getElementById('eventSelect');
+    const feeDisplay = document.getElementById('feeDisplay');
+
+    if (select.value) {
+      feeDisplay.textContent = `Selected event fee: $${select.value}`;
+    } else {
+      feeDisplay.textContent = '';
+    }
+  }
+
+  // Show confirmation on submit click
+  function submitFeedback() {
+    if (!validatePhone()) {
+      return;
+    }
+
+    const confirmation = document.getElementById('confirmationMsg');
+    confirmation.textContent = 'Thank you for your feedback! We appreciate your time.';
+  }
+
+  // Enlarge image on double-click toggle
+  function enlargeImage() {
+    const img = document.getElementById('eventImg');
+    if (img.style.width === '400px') {
+      img.style.width = '200px';
+      img.style.borderColor = '#ccc';
+    } else {
+      img.style.width = '400px';
+      img.style.borderColor = '#007BFF';
+    }
+  }
+
+  // Count characters in textarea
+  function countChars() {
+    const textarea = document.getElementById('feedbackText');
+    const charCount = document.getElementById('charCount');
+    charCount.textContent = textarea.value.length;
+  }
+</script>
+
+
