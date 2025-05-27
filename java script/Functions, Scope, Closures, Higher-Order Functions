@@ -1,0 +1,53 @@
+main.js:
+let events = [];
+function addEvent(name, date, category, seats) {
+  events.push({ name, date, category, seats });
+}
+function createCategoryTracker() {
+  const counts = {};
+
+  return function(category) {
+    if (!counts[category]) counts[category] = 0;
+    counts[category]++;
+    console.log(`🧮 Total ${category} registrations: ${counts[category]}`);
+  };
+}
+
+const trackRegistration = createCategoryTracker(); // Closure in action
+function registerUser(eventName) {
+  const event = events.find(e => e.name === eventName);
+
+  if (!event) {
+    console.error("Event not found.");
+    return;
+  }
+
+  if (event.seats <= 0) {
+    console.error("❌ No seats available for", eventName);
+    return;
+  }
+
+  event.seats--;
+  console.log(`✅ Registered for ${event.name}. Seats left: ${event.seats}`);
+  trackRegistration(event.category); // Track by category
+}
+function filterEventsByCategory(callback) {
+  return events.filter(callback);
+}
+
+//
+// --- Demo ---
+//
+addEvent("JS Workshop", "2025-07-10", "Coding", 25);
+addEvent("UI/UX Meetup", "2025-07-12", "Design", 15);
+addEvent("Python Bootcamp", "2025-07-14", "Coding", 0);
+addEvent("Product Panel", "2025-07-15", "Business", 10);
+const codingEvents = filterEventsByCategory(event =>
+  event.category === "Coding" && event.seats > 0
+);
+console.log("🎯 Available Coding Events:", codingEvents);
+registerUser("JS Workshop");
+registerUser("Python Bootcamp"); 
+registerUser("UI/UX Meetup");
+
+
