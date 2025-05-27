@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Methods Example</title>
+
+    <!-- Internal CSS: Body background color -->
+    <style>
+        /* Body styles */
+        body {
+            background-color: lightblue; /* Set the body background to light blue */
+        }
+
+        /* Header styles */
+        h1 {
+            color: red; /* All h1 headings will be red */
+        }
+    </style>
+    
+    <!-- External stylesheet link -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1 style="color: red;">This heading is red via inline style</h1> <!-- Inline CSS for h1 -->
+    
+    <p>This is a paragraph that uses internal and external styles.</p>
+    
+</body>
+</html>
+
+EXTERNAL CSS
+/* External stylesheet for reusable styles */
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Header styles */
+h1 {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+/* Paragraph styles */
+p {
+    font-size: 1.2em;
+    line-height: 1.5;
+}
+
+
+Summary of Pros and Cons:
+Inline CSS:
+Pros: Quick and easy to apply to individual elements.
+Cons: Not reusable; makes HTML cluttered and harder to maintain.
+Internal CSS:
+Pros: Suitable for small projects or single-page websites; easier to manage than inline styles.
+Cons: Can lead to duplication if used across multiple pages; harder to scale.
+External CSS:
+Pros: Most efficient for large projects; keeps HTML clean and separate from styling; reusable across multiple pages.
+Cons: Requires an additional HTTP request to fetch the stylesheet, though this is minimal with modern caching.
+By using external CSS for reusable styles, internal CSS for page-specific styles, and inline CSS for individual element overrides, you can manage styles in a flexible and efficient manner. Let me know if you need further clarifications or improvements!
+
+
+
