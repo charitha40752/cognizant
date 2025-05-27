@@ -1,0 +1,147 @@
+HTML CODE:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Web Design</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="content">
+            <h1>Responsive Web Design with Flexbox</h1>
+            <p>This is a responsive web design example using CSS media queries, Flexbox, and relative units.</p>
+            <img src="https://via.placeholder.com/800x400" alt="Placeholder Image">
+        </section>
+    </main>
+
+</body>
+</html>
+
+
+CSS CODE:
+/* ------------------------------------------
+   General Styles
+------------------------------------------ */
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* ------------------------------------------
+   Navigation Bar Styles (Desktop Layout)
+------------------------------------------ */
+
+.navbar {
+    background-color: #007BFF;
+    padding: 15px;
+    text-align: center;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar li {
+    margin: 0 15px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* ------------------------------------------
+   Main Content Section
+------------------------------------------ */
+
+.content {
+    padding: 20px;
+    text-align: center;
+}
+
+.content img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
+
+/* ------------------------------------------
+   Media Queries for Smaller Screens
+------------------------------------------ */
+
+/* For tablets and smaller screens (less than 768px) */
+@media (max-width: 768px) {
+    /* Stack navigation links vertically */
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar li {
+        margin: 10px 0;
+    }
+
+    /* Reduce image size */
+    .content img {
+        max-width: 80%;
+        height: auto;
+    }
+
+    /* Reduce font sizes */
+    .navbar a {
+        font-size: 16px;
+    }
+
+    .content h1 {
+        font-size: 24px;
+    }
+
+    .content p {
+        font-size: 16px;
+    }
+}
+
+/* For mobile screens (less than 480px) */
+@media (max-width: 480px) {
+    .navbar a {
+        font-size: 14px;  /* Even smaller font size for smaller screens */
+    }
+
+    .content h1 {
+        font-size: 22px;
+    }
+
+    .content p {
+        font-size: 14px;
+    }
+
+    /* Further reduce the image size */
+    .content img {
+        max-width: 70%;
+    }
+}
+
+
