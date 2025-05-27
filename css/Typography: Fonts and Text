@@ -1,0 +1,144 @@
+HTML CODE:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City Council Portal</title>
+    <!-- Importing Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to the City Council Portal</h1>
+    </header>
+
+    <section class="about">
+        <h2>About Us</h2>
+        <p>The City Council is committed to enhancing the quality of life for residents through local governance. We believe in transparency, inclusion, and progress.</p>
+    </section>
+
+    <section class="services">
+        <h2>Our Services</h2>
+        <p>We offer a variety of public services to the citizens, from public transportation to community centers. Explore what we offer and how you can get involved.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 City Council. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
+
+
+CSS CODE
+/* ------------------------------------------
+   Global Styles
+------------------------------------------ */
+
+/* Apply the imported font to the entire body */
+body {
+    font-family: 'Roboto', sans-serif;  /* Using 'Roboto' as the body font */
+    background-color: #f4f4f4; /* Light gray background for contrast */
+    color: #333; /* Default text color */
+    line-height: 1.6;  /* Improve readability */
+    margin: 0;
+    padding: 0;
+}
+
+/* ------------------------------------------
+   Header Styles
+------------------------------------------ */
+
+/* Header styling */
+header {
+    background-color: #2c3e50;  /* Dark blue background */
+    color: white;  /* White text */
+    padding: 20px;
+    text-align: center; /* Centered header text */
+}
+
+header h1 {
+    font-family: 'Open Sans', sans-serif;  /* Using 'Open Sans' for header */
+    font-size: 3em;
+    font-weight: 600;  /* Bold weight for emphasis */
+    letter-spacing: 2px;  /* Slight letter spacing for a more modern look */
+    text-transform: uppercase;  /* Uppercase for the header title */
+}
+
+/* ------------------------------------------
+   Section Styles
+------------------------------------------ */
+
+/* About Us Section Styling */
+.about {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+}
+
+.about h2 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2em;
+    font-weight: 600;
+    color: #34495e;
+    margin-bottom: 15px;
+    letter-spacing: 1px;  /* Subtle letter-spacing for better readability */
+}
+
+.about p {
+    font-size: 1.1em;
+    color: #555;  /* Dark gray text */
+    line-height: 1.8;  /* Spacing between lines for easier reading */
+    text-align: justify;  /* Justified text for the paragraph */
+    text-transform: capitalize;  /* Capitalize the first letter of each word */
+}
+
+/* Our Services Section Styling */
+.services {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+}
+
+.services h2 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2em;
+    font-weight: 600;
+    color: #e74c3c;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.services p {
+    font-size: 1.1em;
+    color: #555;
+    line-height: 1.8;
+    text-align: justify;
+    text-transform: none;  /* Regular text transformation */
+}
+
+/* ------------------------------------------
+   Footer Styles
+------------------------------------------ */
+
+footer {
+    background-color: #34495e;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 30px;
+}
+
+footer p {
+    font-size: 1em;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 1px;  /* Subtle spacing between letters */
+}
+
+
+
