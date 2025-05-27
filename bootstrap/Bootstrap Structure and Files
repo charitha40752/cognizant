@@ -1,0 +1,71 @@
+2.1
+bootstrap-5.x.x/
+├── css/
+│   ├── bootstrap.min.css
+│   ├── bootstrap.min.css.map
+│   ├── bootstrap.rtl.min.css
+│   └── bootstrap.rtl.min.css.map
+├── js/
+│   ├── bootstrap.bundle.min.js
+│   ├── bootstrap.bundle.min.js.map
+│   ├── bootstrap.min.js
+│   └── bootstrap.min.js.map
+├── icons/
+│   ├── bootstrap-icons.css
+│   ├── bootstrap-icons.min.css
+│   ├── fonts/
+│   │   ├── bootstrap-icons.woff
+│   │   ├── bootstrap-icons.woff2
+│   │   └── ...
+│   └── ...
+└── ...
+
+
+2.2
+bootstrap-project/
+├── css/
+│   └── bootstrap.min.css
+├── js/
+│   └── bootstrap.bundle.min.js
+└── index.html
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap 5 with JS Plugins</title>
+
+    <!-- Link Bootstrap CSS from local file -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Example content with Bootstrap components -->
+    <div class="container mt-5">
+        <h1 class="text-center">Hello, Bootstrap 5!</h1>
+        <p class="text-center">This page uses Bootstrap with JavaScript plugins.</p>
+        
+        <!-- Button with a dropdown (JavaScript functionality required) -->
+        <div class="dropdown text-center">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                Dropdown button
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Link Bootstrap JS (includes Popper.js) -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
+
+
+
