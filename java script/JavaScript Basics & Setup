@@ -1,0 +1,26 @@
+index.html:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Community Portal</title>
+</head>
+<body>
+  <h1>Welcome to the Community Portal</h1>
+
+  <!-- Link to external JS -->
+  <script src="main.js"></script>
+</body>
+</html>
+
+main.js:
+
+// Log a welcome message
+console.log("Welcome to the Community Portal");
+
+// Notify when page is fully loaded
+window.onload = function() {
+  alert("Page fully loaded!");
+};
+
