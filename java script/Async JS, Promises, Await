@@ -1,0 +1,75 @@
+index.html:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Async Event Fetch</title>
+  <style>
+    #loading {
+      font-weight: bold;
+      color: blue;
+      display: none;
+    }
+    .event {
+      margin-bottom: 8px;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 6px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Upcoming Events</h1>
+  <div id="loading">Loading events...</div>
+  <div id="eventsContainer"></div>
+
+  <script src="main.js"></script>
+</body>
+</html>
+
+
+JSON:
+[
+  { "id": 1, "name": "Music Festival", "date": "2025-07-01" },
+  { "id": 2, "name": "Art Expo", "date": "2025-07-10" },
+  { "id": 3, "name": "Tech Conference", "date": "2025-07-20" }
+]
+
+
+main.js:
+const loadingEl = document.getElementById("loading");
+const eventsContainer = document.getElementById("eventsContainer");
+
+function renderEvents(events) {
+  eventsContainer.innerHTML = "";
+  events.forEach(event => {
+    const div = document.createElement("div");
+    div.className = "event";
+    div.textContent = `${event.name} - ${event.date}`;
+    eventsContainer.appendChild(div);
+  });
+}
+
+// Fetch events with .then()/.catch()
+function fetchEventsThen() {
+  loadingEl.style.display = "block";
+  eventsContainer.innerHTML = "";
+
+  fetch("https://mocki.io/v1/2b973a40-6d9d-40d4-89d5-363d8b06e441") // mock API URL example
+    .then(response => {
+      if (!response.ok) throw new Error("Network response was not ok");
+      return response.json();
+    })
+    .then(data => {
+      loadingEl.style.display = "none";
+      renderEvents(data);
+    })
+    .catch(error => {
+      loadingEl.style.display = "none";
+      eventsContainer.textContent = "Failed to load events: " + error.message;
+    });
+}
+
+fetchEventsThen();
+
+
+
