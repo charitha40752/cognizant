@@ -1,0 +1,26 @@
+package Problems;
+interface Playable {
+void play();
+}
+class Guitar implements Playable {
+public void play() {
+    System.out.println("Strumming the guitar 🎸");
+}
+}
+class Piano implements Playable {
+public void play() {
+    System.out.println("Playing the piano 🎹");
+}
+}
+public class InstrumenTest {
+ public static void main(String[] args) {
+     // Create objects of Guitar and Piano
+     Playable guitar = new Guitar();
+     Playable piano = new Piano();
+
+     // Call the play() method
+     guitar.play();
+     piano.play();
+ }
+}
+
