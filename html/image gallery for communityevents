@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portal</title>
+  <style>
+    #welcomeBanner {
+      background-color: #007BFF;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    /* Highlight class */
+    .highlight {
+      background-color: yellow;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+    .event-img {
+      border: 3px solid #ccc;
+      width: 150px;
+      height: auto;
+    }
+
+    table {
+      margin: 20px auto;
+      border-spacing: 20px;
+    }
+
+    caption {
+      font-weight: bold;
+      font-size: 1.2em;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#events">Events</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="help.html" target="_blank">Help</a></li>
+    </ul>
+  </nav>
+
+  <!-- Welcome Banner -->
+  <div id="welcomeBanner">
+    <h1>Welcome Back, User!</h1>
+    <p class="highlight">You're logged in.</p>
+    <p>Today's special: <span style="color: red; font-weight: bold;">50% off all events!</span></p>
+  </div>
+
+  <!-- Main -->
+  <main>
+    <!-- Events Section -->
+    <section id="events">
+      <h2>Community Event Gallery</h2>
+      <table>
+        <caption>Photos from Past Community Events</caption>
+        <tr>
+          <td>
+            <img src="event1.jpg" alt="Music Festival 2024" title="Music Festival 2024" class="event-img" />
+            <p>Music Festival</p>
+          </td>
+          <td>
+            <img src="event2.jpg" alt="Neighborhood Cleanup" title="Neighborhood Cleanup" class="event-img" />
+            <p>Cleanup Day</p>
+          </td>
+          <td>
+            <img src="event3.jpg" alt="Holiday Parade" title="Holiday Parade" class="event-img" />
+            <p>Holiday Parade</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img src="event4.jpg" alt="Art in the Park" title="Art in the Park" class="event-img" />
+            <p>Art in the Park</p>
+          </td>
+          <td>
+            <img src="event5.jpg" alt="Food Truck Rally" title="Food Truck Rally" class="event-img" />
+            <p>Food Truck Rally</p>
+          </td>
+          <td>
+            <img src="event6.jpg" alt="Farmers Market" title="Farmers Market" class="event-img" />
+            <p>Farmers Market</p>
+          </td>
+        </tr>
+      </table>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Portal Inc.</p>
+  </footer>
+
+</body>
+</html>
+
+
+
+
