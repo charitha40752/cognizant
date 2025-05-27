@@ -1,0 +1,23 @@
+form.addEventListener("submit", function(event) {
+  event.preventDefault();
+  console.log("Form submit triggered");
+  const name = form.elements["name"].value.trim();
+  const email = form.elements["email"].value.trim();
+  console.log("Name:", name);
+  console.log("Email:", email);
+  const payload = { name, email };
+  console.log("Payload to send:", payload);
+
+  fetch("https://example.com/api", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload)
+  })
+    .then(response => {
+      console.log("Response received:", response);
+      if (!response.ok) throw new Error("Network error");
+      return response.json();
+    })
+    .then(data => console.log("Success data:", data))
+    .catch(error => console.error("Fetch error:", error));
+});
