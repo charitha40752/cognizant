@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Event Promo Video</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    #message {
+      margin-top: 10px;
+      color: green;
+      font-weight: bold;
+    }
+  </style>
+  <script>
+    // Show message when video is ready to play
+    function videoCanPlay() {
+      document.getElementById("message").textContent = "Video ready to play";
+    }
+
+    // Warn user before leaving the page
+    window.onbeforeunload = function(event) {
+      return "Are you sure you want to leave? The form or page might be unfinished.";
+    };
+  </script>
+</head>
+<body>
+  <h1>Welcome to the Media Event</h1>
+  <video width="640" controls oncanplay="videoCanPlay()">
+    <source src="promo.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <p id="message"></p>
+</body>
+</html>
+
+
