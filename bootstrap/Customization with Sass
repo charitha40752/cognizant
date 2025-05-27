@@ -1,0 +1,49 @@
+package.json:
+
+{
+  "name": "bootstrap-sass-custom",
+  "version": "1.0.0",
+  "scripts": {
+    "sass": "sass custom.scss custom.css --no-source-map"
+  },
+  "dependencies": {
+    "bootstrap": "^5.5.0",
+    "sass": "^1.64.0"
+  }
+}
+
+_custom-variables.scss:
+
+// Customize Bootstrap variables here
+$primary: #ff5722;        // Custom orange primary color
+$border-radius: 1.5rem;   // Larger border radius
+
+custom.scss:
+
+// Import your custom variables BEFORE Bootstrap so your changes apply
+@import "custom-variables";
+
+// Import full Bootstrap source Sass
+@import "node_modules/bootstrap/scss/bootstrap";
+
+index.html:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Bootstrap 5 Custom Sass</title>
+  <link rel="stylesheet" href="custom.css" />
+</head>
+<body>
+
+  <div class="container mt-5">
+    <button class="btn btn-primary rounded-pill">Custom Primary Button</button>
+    <div class="mt-3 p-3 border rounded" style="border-radius: var(--bs-border-radius);">
+      Custom border radius box
+    </div>
+  </div>
+
+</body>
+</html>
+
