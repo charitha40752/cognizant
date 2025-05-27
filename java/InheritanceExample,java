@@ -1,0 +1,23 @@
+import java.util.*;
+public class InheritanceExample {
+
+public static void main(String[] args) {
+// TODO Auto-generated method stub
+Scanner sc=new Scanner(System.in);
+Animal a=new Animal();
+a.makeSound();
+Dog dog=new Dog();
+dog.makeSound();
+}
+
+}
+class Animal{
+void makeSound() {
+System.out.println("Animals make sounds");
+}
+}
+class Dog extends Animal{
+void makeSound() {
+System.out.println("Bark");
+}
+}
